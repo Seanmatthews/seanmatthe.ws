@@ -1,0 +1,39 @@
+body {
+	background-color: #e6efff;
+	font-family: monospace;
+}
+
+.links a {
+	color: gray;
+	text-decoration: none;
+	font-size: 20px;
+	letter-spacing: 2px;
+}
+
+.spacer {
+	height: 10px;
+}
+
+.tagline {
+	font-weight: bold;
+	font-size: 30px;
+}
+
+.blurb {
+	font-size: 12px;
+	width: 50%;
+}
+
+.logo {
+	max-width: 2400px;
+	width: 80%;
+	align-content: center;
+}
+
+.projects-container {
+
+}
+
+.projects-row {
+
+}
