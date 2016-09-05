@@ -1,6 +1,4 @@
 localhost:8888
 root /Users/sean/src/seanmatthe.ws.2/seanmatthe.ws/
 
-markdown / {
-    template index index.html
-}
+fail bc this is unfinished
