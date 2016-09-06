@@ -1,10 +1,11 @@
-	var tag = document.createElement('script');
-   	tag.src = "https://www.youtube.com/iframe_api";
-   var firstScriptTag = document.getElementsByTagName('script')[0];
-   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
    var player = [];
-   var videos = '{{js .Doc.media}}'.split(',');
+   var videos = '{{ .Params.media }}'.split(',');
+
    var playerVars = {
 		modestbranding: '1',
        controls: '0',

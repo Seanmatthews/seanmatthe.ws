@@ -4,6 +4,7 @@ draft = false
 title = "Sean D Matthews"
 tagline = "Robotics Software Engineer"
 type = "index"
+media = "tr3d8iQqR3Y,YOfEae1qCMQ,oOiPv--xyfs"
 +++
 
 Commercial, education, and military robotics; machine learning; computer vision; 

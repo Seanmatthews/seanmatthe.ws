@@ -1,3 +1,4 @@
 baseurl = "https://seanmatthe.ws"
 languageCode = "en-us"
 title = "Sean D Matthews"
+relativeURLs = true
