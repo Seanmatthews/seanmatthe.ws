@@ -1,54 +1,35 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8" />
-<title>{{.Title}}</title>
-<script src="js/teaservideo.js"></script>
-<link rel="stylesheet" type="text/css" href="css/styles.css">
-</head>
-
-
-<body>
+{{ partial "header.html" . }}
 {{ range .Data.Pages }}
-    {{ if eq .Type "index" }}
-<table cellpadding="10" align="center" valign="middle">
+{{ if eq .Type "index" }}    
+{{ partial "scripts.html" . }}
 
-<!-- Header Image -->
-<tr><td align="center"><img class="logo" src="img/fulllogo1.png"></td></tr>
+</head>
+<body>
 
-<!-- Tagline -->
-<tr><td align="center"><div class="tagline">{{ .Params.tagline }}</div></td></tr>
-
-<!-- Blurb -->
-<tr><td align="center"><div class="blurb"><p>{{ .Content }}</p></div></td></tr>
-
-<!-- Teaser Media -->
-<tr align="center" valign="middle">
-<td>
-<table>
-<tr>
-<td><div id="media0" width="(100/3)%"></div></td>
-<td><div id="media1" width="(100/3)%"></div></td>
-<td><div id="media2" width="(100/3)%"></div></td>
-</tr>
-</table>
-</td>
-</tr>
-
-<!-- Links -->
-<tr>
-<td align="center" valign="middle">
-<div class="links"><div class="spacer"></div>
-<a href="projects">PROJECTS</a><div class="spacer"></div>
-<a href="https://www.linkedin.com/in/sean-matthews-5118b7b" target="_blank">RESUME</a><div class="spacer"></div>
-<a href="blog">BLOG</a><div class="spacer"></div>
+<div class="container-idx">
+    <div class="row">
+        <img class="logo" src="img/fulllogo1.png">            
+    </div> 
+    <div  class="row">
+        <div class="tagline">
+            {{ .Params.tagline }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="blurb">
+            <p>{{ .Content }}</p>            
+        </div>        
+    </div>
+    <div class="row">
+        <div id="media0" width="(100/3)%"></div>
+        <div id="media1" width="(100/3)%"></div>
+        <div id="media2" width="(100/3)%"></div>
+    </div>
+    <div class="row">
+        {{ partial "nav.html" . }}
+    </div>
 </div>
-</td>
-</tr>
 
-</table>
-
-    {{end}}
-{{end}}
-</body>
-</html>
+{{ end }}
+{{ end }}
+{{ partial "footer.html" . }}
