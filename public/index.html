@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta name="generator" content="Hugo 0.37" />
+    <meta charset="utf-8">
+
+    
+    <title> Sean D Matthews - seanmatthe.ws </title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    
+
+
+    
+<script>
+
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+   var player = [];
+   var videos = 'tr3d8iQqR3Y,YOfEae1qCMQ,oOiPv--xyfs'.split(',');
+
+   var playerVars = {
+		modestbranding: '1',
+       controls: '0',
+       autoplay: '1',          
+       disablekb: '1',
+       rel: '0',
+       loop: '1',
+       autohide: '1',
+       fs: '0'
+   	};
+      
+   function onYouTubeIframeAPIReady() {
+   		for (var i=0; i<3; ++i) {
+   			playerVars['playlist'] = videos[i];
+       	player[i] = new YT.Player('media'+i, {
+       	height: '224',
+         width: '300',
+         	playerVars: playerVars,
+          videoId: videos[i],
+          events: {
+            	'onReady': onPlayerReady
+          }
+        });
+		} 
+	}
+
+   function onPlayerReady(event) {
+   		event.target.mute();
+      event.target.playVideo();
+   }
+   
+</script>
+
+</head>
+<body>
+
+<div class="container-idx">
+    <div class="row">
+        <img class="logo" src="img/fulllogo1.png">            
+    </div> 
+    <div  class="row">
+        <div class="tagline">
+            Robotics Software Engineer
+        </div>
+    </div>
+    <div class="row">
+        <div class="blurb">
+            <p><p>Commercial, education, and military robotics; machine learning; computer vision;
+industrial automation; autonomous navigation; perception; path planning;
+sensor fusion; paralell programming; CUDA; python; C++; java; swift; mobile; AWS;
+docker; git; algorithms;</p>
+</p>            
+        </div>        
+    </div>
+    <div class="row">
+        <div id="media0" width="(100/3)%"></div>
+        <div id="media1" width="(100/3)%"></div>
+        <div id="media2" width="(100/3)%"></div>
+    </div>
+    <div class="row">
+        <div class="links">
+<div class="spacer"></div>
+<a href="./projects">PROJECTS</a>
+<div class="spacer"></div>
+<a href="https://www.linkedin.com/in/sean-matthews-5118b7b" target="_blank">RESUME</a>
+<div class="spacer"></div>
+<a href="./blog">BLOG</a>
+<div class="spacer"></div>
+</div>
+    </div>
+</div>
+
+
+
+<footer>
+</footer>
+</body>
+</html>

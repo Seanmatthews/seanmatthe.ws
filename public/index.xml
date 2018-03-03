@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sean D Matthews</title>
+    <link>https://seanmatthe.ws/</link>
+    <description>Recent content on Sean D Matthews</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 04 Sep 2016 19:12:41 -0400</lastBuildDate>
+    
+	<atom:link href="https://seanmatthe.ws/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sean D Matthews</title>
+      <link>https://seanmatthe.ws/</link>
+      <pubDate>Sun, 04 Sep 2016 19:12:41 -0400</pubDate>
+      
+      <guid>https://seanmatthe.ws/</guid>
+      <description>Commercial, education, and military robotics; machine learning; computer vision; industrial automation; autonomous navigation; perception; path planning; sensor fusion; paralell programming; CUDA; python; C++; java; swift; mobile; AWS; docker; git; algorithms;</description>
+    </item>
+    
+  </channel>
+</rss>
