@@ -7,9 +7,11 @@
 <body>
 
 <div class="container-idx">
-    <div class="row">
-        <img class="logo" src="img/fulllogo1.png">            
-    </div> 
+    <div class="row" style="text-align: center">
+        <img class="logo" src="img/fulllogo1.png"> 
+    </div>
+	<div class="div-spacer"></div>
+	<div class="div-spacer"></div>
     <div  class="row">
         <div class="tagline">
             {{ .Params.tagline }}
@@ -20,13 +22,15 @@
             <p>{{ .Content }}</p>            
         </div>        
     </div>
+	<br>
+	<!-- video -->
     <!-- div class="row">
         <div id="media0" width="(100/3)%"></div>
         <div id="media1" width="(100/3)%"></div>
         <div id="media2" width="(100/3)%"></div>
     </div -->
     <div class="row">
-        {{ partial "nav.html" . }}
+      {{ partial "nav.html" . }}
     </div>
 </div>
 

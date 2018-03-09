@@ -9,19 +9,28 @@ body {
 	text-decoration: none;
 	font-size: 20px;
 	letter-spacing: 2px;
+	text-align: left;
 }
 
 .links .spacer {
 	height: 10px;
 }
 
+.div-spacer {
+	display: inline;
+}
+
+.div-spacer:after {
+	content: "\a";
+	white-space: pre;
+}
 
 /* HOMEPAGE */
 .container-idx {
     width: 80%;
-    text-align: center;
     display: table;
     margin: auto;
+	text-align: center;
 }
 
 .container-idx .tagline {
@@ -36,13 +45,20 @@ body {
     margin: auto;
 	font-size: 12px;
 	width: 50%;
+	text-align: left;
 }
 
 .container-idx .logo {
-	max-width: 1200px;
+	max-width: 550px;
 	width: 100%;
+	display: inline-block;
+	text-align: left;
 }
 
+.container-idx .links {
+	display: inline-block;
+	text-align: left;
+}
 
 /* PROJECTS */
 .container-projects {
