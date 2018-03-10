@@ -5,20 +5,19 @@
     <div class="row" style="text-align: center">
         <img class="logo" src="img/fulllogo2.png"> 
     </div>
+    <div class="row">
+      {{ partial "nav.html" . }}
+    </div>
     <div  class="row">
         <div class="tagline">
             {{ .Params.tagline }}
         </div>
     </div>	
     <div class="row">
-      {{ partial "nav.html" . }}
-    </div>
-    <div class="row">
         <div class="blurb">
             <p>{{ .Content }}</p>            
         </div>        
     </div>
-	<br>
 	<!-- video -->
     <!-- div class="row">
         <div id="media0" width="(100/3)%"></div>
