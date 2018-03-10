@@ -1,11 +1,6 @@
-{{ partial "header.html" . }}
-{{ range .Data.Pages }}
-{{ if eq .Type "index" }}    
-{{ partial "scripts.html" . }}
 
-</head>
-<body>
-
+{{ define "main" }}
+{{ range where .Data.Pages ".Type" "index" }}
 <div class="container-idx">
     <div class="row" style="text-align: center">
         <img class="logo" src="img/fulllogo2.png"> 
@@ -31,7 +26,5 @@
         <div id="media2" width="(100/3)%"></div>
     </div -->
 </div>
-
 {{ end }}
 {{ end }}
-{{ partial "footer.html" . }}
