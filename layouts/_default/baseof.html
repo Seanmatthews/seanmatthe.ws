@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/style.css">
+	<title>{{ block "title" . }} {{ .Site.Title }} {{ end }}</title>
+	{{ block "header" . }}
+	  <!-- add title here -->
+	{{ end }}	
+  </head>
+  <body>
+	{{ block "main" . }}
+	  <!-- main -->
+	{{ end }}
+  </body>
+  <footer>
+	{{ block "footer" . }}
+	  <!-- footer -->
+	{{ end }}
+  </footer>	
+</html>
