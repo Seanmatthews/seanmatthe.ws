@@ -2,34 +2,24 @@
 body {
 	background-color: #e6efff;
 	font-family: monospace;
+	position:absolute;
 }
 
 .links a {
 	color: gray;
 	text-decoration: none;
-	font-size: 20px;
-	letter-spacing: 2px;
-	text-align: left;
+	font-size: 1.75vw;
+	letter-spacing: 0.2vw;
+	text-align: center;
+	padding: 1vw 2vw;
 }
 
-.links .spacer {
-	height: 10px;
-}
-
-.div-spacer {
-	display: inline;
-}
-
-.div-spacer:after {
-	content: "\a";
-	white-space: pre;
-}
 
 /* HOMEPAGE */
 .container-idx {
-    width: 80%;
+    width: 60%;
     display: table;
-    margin: auto;
+	margin: auto;
 	text-align: center;
 }
 
@@ -37,27 +27,31 @@ body {
     width: 100%;
     margin: auto;
 	font-weight: bold;
-	font-size: 30px;
+	font-size: 2.65vw;
+	margin-bottom: 2.5vw;
 }
 
 .container-idx .blurb {
-    width: 100%;
+    width: 70%;
     margin: auto;
-	font-size: 12px;
-	width: 50%;
+	font-size: 1.2vw;
 	text-align: left;
+	display: table;
 }
 
 .container-idx .logo {
-	max-width: 550px;
-	width: 100%;
+	width: 90%;
 	display: inline-block;
-	text-align: left;
+	text-align: center;
+	margin-bottom: 2vw;
 }
 
 .container-idx .links {
-	display: inline-block;
-	text-align: left;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 2vw;
+	text-align: center;
 }
 
 /* PROJECTS */
