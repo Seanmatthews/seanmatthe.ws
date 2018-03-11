@@ -1,11 +1,9 @@
-+++
-date = "2016-09-04T20:43:17-04:00"
-draft = false
-title = "LAGR"
-type = "project"
-+++
-
-# LAGR
+---
+date: "2016-09-04T20:43:17-04:00"
+draft: true
+title: "LAGR"
+type: projects
+---
 
 {{< figure src="/img/lagrrobot.jpg" >}}
 
