@@ -1,0 +1,11 @@
+{{ define "main" }}
+<h1 style="text-transform: uppercase;">{{ .Type }}</h1>
+{{ range .Data.Pages }}
+  <hr>
+  <h2>{{ .Title }}</h2>
+  <p>{{ .Content }}</p>
+{{ end }}
+{{ end }}
+
+
+
