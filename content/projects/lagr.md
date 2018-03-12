@@ -1,15 +1,22 @@
 ---
 date: "2016-09-04T20:43:17-04:00"
-draft: true
+draft: false
 title: "LAGR"
 type: projects
+project_date: "2008-02-01"
 ---
 
-{{< figure src="/img/lagrrobot.jpg" >}}
+The Learning Applied to Ground Vehicles (LAGR) was a DARPA program intending to
+push the limits of autonomous ground navigation.LAGR learned autonomous navigation
+through the classification of different terrain types according to an evaluation
+of whether they're traversible. 
 
-The Learning Applied to Ground Vehicles (LAGR) program aimed to push the limits 
-of autonomous ground navigation. I participated in a DARPA-funded follow-on to
-the project where the robot performed two tasks: 1) obstacle and crowd aversion,
+Follow-on projects involved teaching the robot 1) obstacle and crowd aversion,
 and 2) human target following. Both tasks used single-scan lidar as the primary
 means of perception. 
+
+{{< youtube gCLwmwPFi_g >}}
+
+
+
 
