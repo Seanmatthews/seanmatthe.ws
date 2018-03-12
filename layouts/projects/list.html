@@ -1,11 +1,11 @@
 {{ define "main" }}
-<h1 style="text-transform: uppercase;">{{ .Type }}</h1>
-{{ range .Data.Pages }}
-  <hr>
-  <h2>{{ .Title }}</h2>
-  <p>{{ .Content }}</p>
+<div class="container-projects">
+<h1 style="text-transform: uppercase; text-align: center;">{{ .Type }}</h1>
+{{ range .Data.Pages.ByParam "project_date" }}
+<br>
+<hr>
+<h2>{{ .Title }}</h2>
+{{ .Content }}
+{{ end }}  
+</div>
 {{ end }}
-{{ end }}
-
-
-
