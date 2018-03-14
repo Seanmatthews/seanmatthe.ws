@@ -9,9 +9,12 @@
 	{{ end }}	
   </head>
   <body>
-	{{ block "main" . }}
+	<div class="container-all">
+	  <a href="{{ .Site.BaseURL }}"><img class="logo" src="{{ .Site.BaseURL }}/img/fulllogo2.png"></a>
+	  {{ block "main" . }}
 	  <!-- main -->
-	{{ end }}
+	  {{ end }}
+	</div>
   </body>
   <footer>
 	{{ block "footer" . }}

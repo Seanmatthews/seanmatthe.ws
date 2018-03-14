@@ -1,11 +1,10 @@
 {{ define "main" }}
-<div class="container-projects">
 <h1 style="text-transform: uppercase; text-align: center;">{{ .Type }}</h1>
 {{ range .Data.Pages.ByParam "project_date" }}
 <br>
 <hr>
 <h2>{{ .Title }}</h2>
 {{ .Content }}
+<div style="text-align: right; padding-top: 5vw; font-style: italic;">{{ .Params.project_date }}</div>
 {{ end }}  
-</div>
 {{ end }}
