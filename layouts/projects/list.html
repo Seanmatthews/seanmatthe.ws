@@ -1,6 +1,6 @@
 {{ define "main" }}
 <h1 style="text-transform: uppercase; text-align: center;">{{ .Type }}</h1>
-{{ range .Data.Pages.ByParam "project_date" }}
+{{ range (.Data.Pages.ByParam "project_date").Reverse }}
 <br>
 <hr>
 <h2>{{ .Title }}</h2>
