@@ -1,0 +1,9 @@
+{{ define "main" }}
+<h1 style="text-transform: uppercase; text-align: center;">{{ .Type }}</h1>
+{{ range .Data.Pages.ByDate }}
+<br>
+<div class="articles">
+  <div class="link">{{ .PublishDate.Format "Jan 2 2006" }} - {{ .Title }}</div>
+</div>
+{{ end }}  
+{{ end }}
