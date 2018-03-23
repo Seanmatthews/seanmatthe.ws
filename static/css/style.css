@@ -1,4 +1,9 @@
 /* SITE-WIDE */
+
+/* See:
+https://twitter.com/chriscoyier/status/578684681949859840?refsrc=email&s=11
+*/
+
 body {
 	background-color: #e6efff;
 	font-family: monospace;
@@ -8,7 +13,7 @@ body {
 .links a {
 	color: gray;
 	text-decoration: none;
-	font-size: 1.75vw;
+	font-size: 1.7vw;
 	letter-spacing: 0.2vw;
 	text-align: center;
 	padding: 1vw 2vw;
