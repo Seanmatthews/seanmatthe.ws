@@ -22,6 +22,14 @@ I have only ever done as much web development as was necessary to achieve my oth
 {{< figure src="https://imgs.xkcd.com/comics/standards.png" >}}
 
 ## Create your site, locally
+Hugo is great, and here's why. Create a directory somewhere, change into that directory, and then run `hugo new site . `. That directory now contains the entire infrastruture for your static website, which we only need fill in. The hugo website provides some [quick start instructions](https://gohugo.io/getting-started/quick-start/) for loading themes and adding content. Check it out for a quick overview on adding content and running a debug server, but it's safe to ignore everything theme-related.
+
+The part of hugo's architecture that most confused me is how the layout subdirectory works for slightly-less-than-simple cases. Hugo maintains the general idea that pages must be either single entities (a page dedicated to a single piece of content) or list entities (a page dedicated to a list of entities). Different levels of default to directory-specific single or list layout definitions dictate the visible page layout. With this in mind, there exist a slew of [precendence rules](https://gohugo.io/templates/lookup-order/) for which of the defined layouts the server uses. Let's go through the layout for my site.
+
+First, inside `/layout`, I have a `/_default` directory that houses the default sitewide templates. All I put in here is [`baseof.html`](https://github.com/Seanmatthews/seanmatthe.ws/blob/master/layouts/_default/baseof.html). It acts as the html base of every page on my entire site (unless overridden by a more specific `baseof.html`, which I don't do). You can see that it simply fills in the common header, body, and footer elements while leaving hooks for the more specific contents of those sections. Notice in the template the phrase `{{ block "main" . }}`. As you'll see, pages that wish to use the template will _define_ a main block in their layout html.
+
+Next, inside `/layout`, I have a `/partials` directory that houses html bits. In my case, the one relevant bit is [`nav.html`](https://github.com/Seanmatthews/seanmatthe.ws/blob/master/layouts/partials/nav.html), the navigation links plugged into `index.html`. My use of this partial doesn't add any real value to my setup, but you can imagine it would be useful for placing the same navigation links on different locations of different pages.
+
 
 
 ## Deploy server
