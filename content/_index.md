@@ -6,7 +6,7 @@ tagline: "Robotics Software Engineer"
 type: index
 ---
 
-Commercial, education, and military robotics; machine learning; computer vision; 
+commercial, education, and military robotics; machine learning; computer vision; 
 industrial automation; autonomous navigation; perception; path planning; 
-sensor fusion; paralell programming; CUDA; python; C++; java; swift; mobile; AWS; 
-docker; git; algorithms;
+sensor fusion; paralell programming; CUDA; ROS; python; C++; java; AWS; docker;
+git; algorithms; cloud robotics; 
