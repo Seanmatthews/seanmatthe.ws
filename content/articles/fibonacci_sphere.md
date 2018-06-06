@@ -79,6 +79,17 @@ Converting from the 2D case to the 3D case is quite simple! Conceptually, you as
 <br>
 
 ## Points on a spherical cap
+In the many instances where you might not want to cover the entire sphere, you can generalize the above process to any height on the sphere. I do it in a non-optimal, but more easily understandable, way here. We still calculate all points on the sphere, but display only the number of points that are proportional to the desired height of the cap (versus the total sphere height).
 
+<br>
+{{< highlight py3 >}}
+
+
+
+{{< / highlight >}}
+
+<br>
+<iframe src="https://www.openprocessing.org/sketch/558955/embed/" width="600" height="600"></iframe>
+<br>
 
 ## To what end?
