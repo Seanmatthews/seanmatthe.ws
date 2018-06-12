@@ -1,7 +1,7 @@
 ---
 title: "The Amazing, Globular Fibonacci Sphere"
 date: 2018-05-29T21:54:49-04:00
-draft: true
+draft: false
 type: articles
 ---
 
@@ -82,14 +82,8 @@ Converting from the 2D case to the 3D case is quite simple! Conceptually, you as
 In the many instances where you might not want to cover the entire sphere, you can generalize the above process to any height on the sphere. I do it in a non-optimal, but more easily understandable, way here. We still calculate all points on the sphere, but display only the number of points that are proportional to the desired height of the cap (versus the total sphere height).
 
 <br>
-{{< highlight py3 >}}
-
-
-
-{{< / highlight >}}
-
-<br>
 <iframe src="https://www.openprocessing.org/sketch/558955/embed/" width="600" height="600"></iframe>
 <br>
 
 ## To what end?
+Before I took this golden-angled path, I wanted a way to place equdistant points on a spherical cap in order to more properly represent sensor detections for sensors with a significant field of view, and for which the max distance forms a spherical cap. Now, for most sensors, and for most systems, adding either a single point to your map would likely work fine for the purposes of rough obstacle avoidance. Given the small resolution of the voxels that form my map, and given the fine navigation I'm looking to perform in tight spaces, I opted for this fine-grained representation of the sensor detection cap. I hope you, as well, find some benefit from this exloratory endeavour!
