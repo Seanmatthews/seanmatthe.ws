@@ -13,14 +13,14 @@ You enter a shadowy stone archway. The exquisite craftsmanship of the ancient ma
 You wipe away the layers of crud from the first set up markings. A written phrase appears: _Single Responsibility Principle_
 ```
 
-The knowledge of the __Single Responsibility Principle__ has been conferred to you by The Oracle. <insert rest>
+The knowledge of the __Single Responsibility Principle__ has been conferred to you by The Oracle. This principle suggests that "every module or class should have a reponsibility over [only] a single part of the functionality provided by the software, and that reponsibility should be entirely encapsulated by the class. All services should be narrowly aligned with that responsibility."<sup>[https://en.wikipedia.org/wiki/Single_responsibility_principle]([1])</sup> Otherwise stated, "a class should have only one reason to change."<sup>[]([2])</sup> That is, if you're changing a class for more than one purpose, say both data and cosmetic, then that class should be split into two separate classes. 
 
 ```bash
 > read second marking
 Upon removing the cruft from the grooves that make up this set of markings, a written phrase appears: _Separation of Concerns_
 ```
 
-The knowledge of the __Separation of Concerns__ has been conferred to you by The Oracle. <insert rest>
+The knowledge of the __Separation of Concerns__ has been conferred to you by The Oracle. This principle suggests separating "a computer program into distinct sections, such that each section addresses a separate concern. A concern can be as general as the details of the hardware [for which the code is being optimized], or as specific as the name of a class to instantiate."<sup>[https://www.cs.utexas.edu/users/EWD/transcriptions/EWD04xx/EWD447.html]([3])</sup> It differs from the Single Responsibility Principle in that a "conerns" are synonymous with features or behaviors, while responsibilities refer to those of a software architectural unit (a class, for example).
 
 ```bash
 > read third marking
