@@ -7,10 +7,10 @@ type: articles
 <div class="bash" >
 {{< highlight bash >}}
   
-  You enter a shadowy stone archway. The exquisite craftsmanship of the ancient masons
-  who built this temple peeks through the centuries of corrosion. Your iPhone LED lights
-  your way toward an empty cyclindrical chamber. On the walls, you make out a series of
-  seven faint, pseudorandomly placed markings.
+  You enter a shadowy stone archway. The exquisite craftsmanship of the ancient
+  masons who built this temple peeks through the centuries of corrosion. Your
+  iPhone LED lights your way toward an empty cyclindrical chamber. On the walls,
+  you make out a series of seven faint, pseudorandomly placed markings.
   Obvious exits: a large stone archway.
   
 {{< / highlight >}}
