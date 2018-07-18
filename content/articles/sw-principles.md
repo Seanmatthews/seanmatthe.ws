@@ -4,6 +4,10 @@ date: 2018-07-01T16:06:51-04:00
 draft: false
 type: articles
 ---
+<br>
+{{< figure src="../img/cave.png" >}}
+<br>
+
 <div class="bash" >
 {{< highlight bash >}}
   
