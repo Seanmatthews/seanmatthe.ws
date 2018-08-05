@@ -21,15 +21,35 @@ Perlin Noise is a type of gradient noise that is typically used for increasing t
   1) Calculate the dot product of each gradient and distance vector pair
   1) Linearly interpolate between each of the computed dot products, using a fade function (easing curve) as the smoothing parameter
 
+<br>
+{{< highlight cpp >}}
+{{< / highlight >}}
+<br>
 
 ## Pink Noise (or Fractal Noise)
 _Note: If you're coming from a deep internet dive on Perlin Noise, you probably came across "fractal noise". Fractal noise is another name for pink noise, the former of which is commonly used by the computer graphics crowd (most likely because several pieces of popular software have fractal noise tools)._
 
-blah blah
+Pink noise is a signal or process with a frequency spectrum such that the power spectral density is inversely proportional to the frequency of the signal. As with Perlin noise, there exist a number of articles on pink noise, and in the spirit of brevity, the important takeaway for my purpose is that pink noise Beyond the perception of pink noise happens to represent statistical fluctuations in a vastly diverse number of physical and biological systems. It often describes patterns in human speech loudness fluctuations, tidal wave heights, heart beat rhythms, neural activity, statistics of DNA sequences, mental states, and so much more!
 
 
-## Simulating Obstacles
+Once we're capable of generating Perlin noise, creating pink noise is a simple matter of rescaling that Perlin noise and adding it to itself.
+
+<br>
+{{< highlight cpp >}}
+{{< / highlight >}}
+<br>
+
+## Simulating Obstacles With Noise
+The task of creating noise for testing path planning algorithms is the same as the task of creating terrain for lifelike CGI. Much research has been dedicated to noise generation for the purposes of the latter. With this article, I don't present anything here that's.. groundbreaking ..but rather I offer you some of the easily-implementable bases of noise generation for creating naturally distributed obstacles across either 2D or 3D terrains for the purpose of testing your own path planning algorithms. As a generalized pattern generator, we can rely on pink noise, or Perlin noise, to create 2D or 3D terrain with an occurence of structure and obstacles very much like what we'd come across on the ocean floor, for example.
+
+While pink noise is supposedly more representative of natural processes, Perlin noise might be good enough for your purposes. See examples of each in both 2D and 3D for your own comparison:
+
+
+
+
 
 
 *References*
-* https://en.wikipedia.org/wiki/Perlin_noise
+* [Perlin Noise](https://en.wikipedia.org/wiki/Perlin_noise)
+* [Pink Noise](https://en.wikipedia.org/wiki/Pink_noise)
+* [Noise Functions and Map Generation](https://www.redblobgames.com/articles/noise/introduction.html)
