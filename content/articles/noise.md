@@ -7,9 +7,8 @@ type: articles
 
 Path & motion planning is a particular interest of mine, and, recently, I've been experimenting with a number of 2D and 3D path planners for purposes of both subsea navigation and navigation around manmade structures. After implementing some of these algorithms, I needed a way to test them thoroughly. For that, I wanted a map generator capable of fabricating maps that comprise some pseudo-random clusters of pixels (in 2D), and some natural-ish terrain (in 3D). Nothing fancy, something pragmatic.
 
-
 ## Perlin Noise
-Not being from the computer graphics world, I had never heard of Ken Perlin. This guy, in the early 1980s, while indirectly working on the movie Tron (1982), formulated an algorithm for generating gradient noise to produce better CGI effects for object surfaces, fire, smoke, and more! Later, in 2002, after winning a frikkin Academy Award for Technical Achievement, he improved on his algorithm by correcting a couple minor defects. That's some back story, and let's face it-- as a roboticist *not* working in movies, the best I can hope for is inheriting my wife's 78 year-old aunt's Emmy. 
+Barring any immersion in the computer graphics world, I had never heard of Ken Perlin. This guy, in the early 1980s, while indirectly working on the movie Tron (1982), formulated an algorithm for generating gradient noise to produce better CGI effects for object surfaces, fire, smoke, and more! Later, in 2002, after winning a frikkin Academy Award for Technical Achievement, he improved on his algorithm by correcting a couple minor defects. That's some back story, and let's face it-- as a roboticist *not* working in movies, the best I can hope for is inheriting my wife's 80 year-old aunt's Emmy. 
 
 Perlin Noise is a type of gradient noise that is typically used for increasing the appearance of realism in computer graphics. But at its core, the algorithm is a pseudo-random noise generator whose visual details are all the same size, allowing it to be easily scaled and used as a procedural texture primitive in other such generators (or mathematical expressions with other purposes). Without going into too much detail (there are a weath of articles already), the algorithm works as follows:
 
@@ -39,14 +38,19 @@ Once we're capable of generating Perlin noise, creating pink noise is a simple m
 {{< / highlight >}}
 <br>
 
+The above code products noise that looks like this:
+
+<br>
+{{< figure src="" >}}
+
 ## Simulating Obstacles With Noise
 The task of creating noise for testing path planning algorithms is the same as the task of creating terrain for lifelike CGI. Much research has been dedicated to noise generation for the purposes of the latter. With this article, I don't present anything here that's.. groundbreaking ..but rather I offer you some of the easily-implementable bases of noise generation for creating naturally distributed obstacles across either 2D or 3D terrains for the purpose of testing your own path planning algorithms. As a generalized pattern generator, we can rely on pink noise, or Perlin noise, to create 2D or 3D terrain with an occurence of structure and obstacles very much like what we'd come across on the ocean floor, for example.
 
 While pink noise is supposedly more representative of natural processes, Perlin noise might be good enough for your purposes. See examples of each in both 2D and 3D for your own comparison:
 
 
-
-
+## Simulated Obstacle Detection
+The test case for my generated obstacles is a mobile agent planning a discrete path over a 2D occupancy grid with known and unknown obstacles. In the case of unknown obstacles, the mobile agent should replan around them. To accomplish this, I use two layer of occupancy grids. The first layer, visible to the robot blah blah..... The second later, invisible to the robot, blah blah.... 
 
 
 *References*
