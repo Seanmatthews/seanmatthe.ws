@@ -3,7 +3,7 @@
 {{ range .Data.Pages.ByDate.Reverse }}
 <br>
 <div class="articles">
-  <div class="link">{{ .PublishDate.Format "Jan 2 2006" }} - <a href="{{ .Permalink }}" >{{ .Title }}</a></div>
+  <div class="link">{{ .PublishDate.Format "02 Jan 2006" }} - <a href="{{ .Permalink }}" >{{ .Title }}</a></div>
 </div>
 {{ end }}  
 {{ end }}
