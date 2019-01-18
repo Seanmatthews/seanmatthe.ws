@@ -5,20 +5,21 @@ draft: true
 type: articles
 ---
 
-Path & motion planning is a particular interest of mine, and, recently, I've been experimenting with a number of 2D and 3D path planners for purposes of both subsea navigation and navigation around manmade structures. After implementing some of these algorithms, I needed a way to test them thoroughly. For that, I wanted a map generator capable of fabricating maps that comprise some pseudo-random clusters of pixels (in 2D), and some natural-ish terrain (in 3D). Nothing fancy, something pragmatic.
+Path & motion planning is a particular interest of mine, and, recently, I've been experimenting with a number of 2D and 3D path planners for purposes of both subsea navigation around manmade structures. After implementing some of these algorithms, I needed a way to test them thoroughly. How about a map generator capable of fabricating maps that comprise some pseudo-random clusters of 2D pixels, and some natural-ish 3D terrain? Nothing fancy, something pragmatic. That sounds nice!
 
 ## Perlin Noise
-Barring any immersion in the computer graphics world, I had never heard of Ken Perlin. This guy, in the early 1980s, while indirectly working on the movie Tron (1982), formulated an algorithm for generating gradient noise to produce better CGI effects for object surfaces, fire, smoke, and more! Later, in 2002, after winning a frikkin Academy Award for Technical Achievement, he improved on his algorithm by correcting a couple minor defects. That's some back story, and let's face it-- as a roboticist *not* working in movies, the best I can hope for is inheriting my wife's 80 year-old aunt's Emmy. 
+My initial Google search brought me to "Perlin Noise". With zero immersion in the computer graphics world, I had never heard of Ken Perlin. This guy, in the early 1980s, while indirectly working on the movie Tron (1982), formulated an algorithm for generating gradient noise to produce better CGI effects for object surfaces, fire, smoke, and more! Later, in 2002, after winning a frikkin Academy Award for Technical Achievement, he improved on his algorithm by correcting a couple minor defects. That's some back story, and let's face it-- as a roboticist *not* working in movies, the best I can hope for is inheriting my wife's 80 year-old aunt's Emmy. 
 
 Perlin Noise is a type of gradient noise that is typically used for increasing the appearance of realism in computer graphics. But at its core, the algorithm is a pseudo-random noise generator whose visual details are all the same size, allowing it to be easily scaled and used as a procedural texture primitive in other such generators (or mathematical expressions with other purposes). Without going into too much detail (there are a weath of articles already), the algorithm works as follows:
 
 * Create a randomized permutation table for determining gradient vectors
-* For each point/pixel
-  1) Place the point in a unit square (or cube for 3D)
-  1) Calculate the distance vectors to that point from each corner of the box
-  1) Use the permutation table to hash a gradient vector for each corner
-  1) Calculate the dot product of each gradient and distance vector pair
-  1) Linearly interpolate between each of the computed dot products, using a fade function (easing curve) as the smoothing parameter
+* For each point/pixel:
+
+  1. Place the point in a unit square (or cube for 3D)
+  1. Calculate the distance vectors to that point from each corner of your hypercube
+  1. Use a permutation table to hash a gradient vector for each corner
+  1. Calculate the dot product of each gradient and distance vector pair
+  1. Linearly interpolate between each of the computed dot products, using an [easing function](https://stackoverflow.com/questions/8316882/what-is-an-easing-function) as the smoothing parameter. (Similarly, see [smoothstep](https://en.wikipedia.org/wiki/Smoothstep)).
 
 <br>
 {{< highlight cpp >}}
@@ -52,8 +53,9 @@ While pink noise is supposedly more representative of natural processes, Perlin 
 ## Simulated Obstacle Detection
 The test case for my generated obstacles is a mobile agent planning a discrete path over a 2D occupancy grid with known and unknown obstacles. In the case of unknown obstacles, the mobile agent should replan around them. To accomplish this, I use two layer of occupancy grids. The first layer, visible to the robot blah blah..... The second later, invisible to the robot, blah blah.... 
 
-
+---
 *References*
+
 * [Perlin Noise](https://en.wikipedia.org/wiki/Perlin_noise)
 * [Pink Noise](https://en.wikipedia.org/wiki/Pink_noise)
 * [Noise Functions and Map Generation](https://www.redblobgames.com/articles/noise/introduction.html)
