@@ -3,7 +3,13 @@
 {{ range .Data.Pages.ByDate.Reverse }}
 <br>
 <div class="articles">
-  <div class="link">{{ .PublishDate.Format "02 Jan 2006" }} - <a href="{{ .Permalink }}" >{{ .Title }}</a></div>
+  <div class="link">{{ .PublishDate.Format "02 Jan 2006" }} -
+  {{ if (isset .Params "redirect") }}
+	<a href="{{ .Params.redirect }}" target="_blank">{{ .Title }}</a>
+  {{ else }}
+    <a href="{{ .Permalink }}" >{{ .Title }}</a>
+  {{ end }}
+  </div>
 </div>
 {{ end }}  
 {{ end }}
