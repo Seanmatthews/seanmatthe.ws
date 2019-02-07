@@ -9,6 +9,5 @@ I founded BlinkGear, along with two partners, in 2010. My grandiose idea was to 
 
 {{< figure src="img/blinkrc.jpg" >}}
 
-BlinkGear produced and sold thousands of units, both individual sales and wholesale, over two hardware designs. At some point, the fun had to end. We'll always have our first marketing video...
+BlinkGear produced and sold thousands of units, both individual sales and wholesale, over two hardware designs. At some point, the fun had to end.
 
-{{< youtube RxEyOe3kjs8 >}}
