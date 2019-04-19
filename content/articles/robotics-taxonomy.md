@@ -5,11 +5,13 @@ draft: true
 type: articles
 ---
 
+=INSERT WORDCLOUD HERE
+
 Recently, I thought of a question who's answer I pondered for a little bit. I performed some light Google searches for the answer, but I discovered nothing solid. I wanted to know... what is the generally-accepted taxonomy of the field of robotics?
 
 The field poses some problems in uncovering its taxonomy, not least of which is its multi-disciplinary nature. Robotics comprises primarily mechanical engineering, electrical engineering, and software engineering. One doesn't need to look far to see the daily application of these proficiencies in robotics. But other areas, too, often cross the boundary into robotics research and application. Biomimetics, for example, brings us biologically-inspired robotic designs that aim to mimic not only nature's design, but the efficiency and elegance with which nature's designs solve the complex problems associated with navigating a potentially dangerous existence. Neuroscience helps us understand how our brain represents the perceived world and tackles complex problems based on that representation. Other research avenues in this area explore the language of the brain and how to interface it directly.
 
-## The Method
+## Methodology
 To start, I chose a number of robotics books that are available on Amazon. I didn't consider it a terribly bold assumption that Amazon would proffer most, if not all, relevant robotics books.From these books, I extracted the table of contents, forming four lists in the process:
 
 1. Top-level sections titles
@@ -25,7 +27,8 @@ I'm sorry to say that my methods for data extraction were not hypertechnical. Pa
 ## Data Cleaning
 My primary method for cleaning the data was to separate the top-level and lower-level sections into separate lists. It turns out that top-level table of contents titles generally have good organization & cleanliness from book to book. In some books, the terms included in the top-level section titles were too broad or sparse. These were still included, as I didn't think it would taint the data. In other books, the top-level section titles were too specific, sentence-y, or didn't contain relevant terms. Interestingly, books with these properties tended to cover DIY, or hobbyist, robotics topics. I didn't include those books. 
 
-=provide pictures with examples for these sections
+=provide pictures with examples for these sections.
+=Don't make this section too long. Make this a bulleted list instead perhaps.
 ### Repetetive subsection titles
 =This was a driver for separating sections and subsections. Repetitive words removed only in cases where removing the repetitive parts would not obfuscate the meaning of the term specified in the subsection. Otherwise, repetition was allowed to remain.
 ### Overly-specific subsection titles
@@ -39,12 +42,12 @@ I did throw out books in two cases:
 1. The book was not sufficiently related to the field of robotics
 1. Books that focussed on tools rather than concepts (hobbyist-focused publications, for example)
 
-### Top-level sections
-=anything?
+=Top-level sections
+- anything?
 
-### Subsections
+=Subsections
 - repetitive titles allowed to remain
 - subjectivity of removing overly-specific subsection titles (it's possible i could have been forcing a structure with my bias) 
 
-## Wordcloud Formation
-https://github.com/amueller/word_cloud
+## The Beginnings Of A Consensus-Based Taxonomy
+= INSERT TOP N WORD HISTOGRAM PICTURE
