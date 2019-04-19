@@ -18,10 +18,11 @@ To start, I chose a number of robotics books that are available on Amazon. I did
 1. Stop words / phrases
 
 =reasoning for sections
+Why did 
 =how they're used
 
 ## Data Extracting
-I'm sorry to say that my methods for data extraction were not hypertechnical. 
+I'm sorry to say that my methods for data extraction were not hypertechnical. Painstakingly, I typed each table of contents section title into a file. Why would I do something so.. manual? Well, while Amazon is very good about listing TOCs for their books, they disallow copying text or saving the books' preview pages. The best potential solution I devised involves screenshotting each page, feeding it through an optical character recognition (OCR) tool that hopefully maintains the order and placement of the words, and then writing my own script to tokenize by line and distinguish between top-level and lower-level section titles. That cost-benefit ratio of such a system, along with my desire to actually digest each of the section titles via reading/writing them, pushed me in the manual direction. 
 
 ## Data Cleaning
 My primary method for cleaning the data was to separate the top-level and lower-level sections into separate lists. It turns out that top-level table of contents titles generally have good organization & cleanliness from book to book. In some books, the terms included in the top-level section titles were too broad or sparse. These were still included, as I didn't think it would taint the data. In other books, the top-level section titles were too specific, sentence-y, or didn't contain relevant terms. Interestingly, books with these properties tended to cover DIY, or hobbyist, robotics topics. I didn't include those books. 
