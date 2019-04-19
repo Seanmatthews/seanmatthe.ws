@@ -17,9 +17,7 @@ To start, I chose a number of robotics books that are available on Amazon. I did
 1. Appendix titles
 1. Stop words / phrases
 
-=reasoning for sections
-Why did 
-=how they're used
+The top-level sections of textbooks tend to provide the most concisely relevant terms (if not too broad), which are likely to compose at least part of the taxonomy of the field. Lower-level subsection titles provide valuable detailed field terminology that might comprise the lower levels of the taxonomy tree. However, the subsections in many of the analyzed books would require thorough cleaning-- often  riddled with excessive and repetitive detail, or irrelevant words. The appendices offered a pleasant smattering of closely-related robotics terms. The stop set contains the typical prepositions, and common TOC words (references, examples, proof et al).
 
 ## Data Extracting
 I'm sorry to say that my methods for data extraction were not hypertechnical. Painstakingly, I typed each table of contents section title into a file. Why would I do something so.. manual? Well, while Amazon is very good about listing TOCs for their books, they disallow copying text or saving the books' preview pages. The best potential solution I devised involves screenshotting each page, feeding it through an optical character recognition (OCR) tool that hopefully maintains the order and placement of the words, and then writing my own script to tokenize by line and distinguish between top-level and lower-level section titles. That cost-benefit ratio of such a system, along with my desire to actually digest each of the section titles via reading/writing them, pushed me in the manual direction. 
