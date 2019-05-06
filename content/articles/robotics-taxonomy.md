@@ -36,6 +36,8 @@ Other special cases where data required cleansing:
 ## The Beginnings Of A Consensus-Based Taxonomy
 I've only begun to chip away at the data that contains this beautiful, cohesive robotics taxonomy information I was hoping to obtain. Clearly, I need to better structure the data for analysis in order to achieve a taxonomy that might be used as a high-level robotics taxonomoy. I look forward to revisiting this later. For now, here are some pretty and lightly informative graphs:
 
+_(Find a gist with the code I used to create both these graphs, as well as the word cloud above, [here](https://gist.github.com/Seanmatthews/9187fd5ffc568138114dfdcaa5d4ba3a).)_
+
 ### Top 25 High-Level ToC Words
 {{<figure src="../img/topwords_25_transparent.png" height="600" >}}
 
