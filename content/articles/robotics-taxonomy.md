@@ -1,7 +1,7 @@
 ---
 title: "Robotics Taxonomy"
-date: 2019-04-12T14:12:46-04:00
-draft: true
+date: 2019-05-05T14:12:46-04:00
+draft: false
 type: articles
 ---
 
@@ -28,13 +28,17 @@ I'm sorry to say that my methods for data extraction were not hypertechnical. Pa
 My primary method for cleaning the data was to separate the top-level and lower-level sections into separate lists. It turns out that top-level table of contents titles generally have good organization & cleanliness from book to book. In some books, the terms included in the top-level section titles were too broad or sparse. These were still included, as I didn't think it would taint the data. In other books, the top-level section titles were too specific, sentence-y, or didn't contain relevant terms. Interestingly, books with these properties tended to cover DIY, or hobbyist, robotics topics. I didn't include those books. 
 
 Other special cases where data required cleansing:
-* Repetetive subsection titles were  a driver for separating sections and subsections. I removed repetitive words only in cases where removing the repetitive parts would not obfuscate the meaning of the term specified in the subsection. Otherwise, I allowed repetition to remain.
-* Overly-specific subsection titles in the form of sentences typically did not introduce any relevant terms
-* Combination of subsection & parent titles...
+* Repetetive subsection titles were a driver for separating sections and subsections. I removed repetitive words only in cases where removing the repetitive parts would not obfuscate the meaning of the term specified in the subsection. Otherwise, I allowed repetition to remain.
+* Overly-specific subsection titles, usually in the form of sentences, typically did not introduce any relevant terms. I wholly removed these.
+* The combination of subsection & parent titles was required in instances where the parent title was required to differentiate, or properly describe, its subsection titles.
 =when the subsection required the parent title to make clear what it was actually referencing. In some cases, where, above, repetitive subsection titles were allowed to remain, this rule kicked into play.
 
-## Potential Bias
-I did throw out books in two cases:
+## The Beginnings Of A Consensus-Based Taxonomy
+### Top 25 High-Level ToC Words
+{{<figure src="../img/topwords_25_transparent.png" height="600" >}}
+
+## Potential Bias & Other Errors
+I did throw out entire books in two cases:
 
 1. The book was not sufficiently related to the field of robotics
 1. Books that focussed on tools rather than concepts (hobbyist-focused publications, for example)
@@ -43,5 +47,4 @@ The first case, I believe, had no negative effect. It's possible that through di
 
 In lower-level subsections, some titles with repetitive terms were retained due to their requirement in describing similar, but different, concepts. This undoubtedly affects individual word count, bolstering those repeated words. These same similar terms might then occur in more than one book, exacerbating the bias. 
 
-## The Beginnings Of A Consensus-Based Taxonomy
-= INSERT TOP N WORD HISTOGRAM PICTURE
+Finally, you may have noticed that the ToC titles were split into individual words in most cases. Some of the top N words might be parts of multi-word terms. And they may have been pushed to the top N words especially if they were individually part of several multi-word terms. 
