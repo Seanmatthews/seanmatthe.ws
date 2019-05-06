@@ -34,8 +34,12 @@ Other special cases where data required cleansing:
 =when the subsection required the parent title to make clear what it was actually referencing. In some cases, where, above, repetitive subsection titles were allowed to remain, this rule kicked into play.
 
 ## The Beginnings Of A Consensus-Based Taxonomy
+I've only begun to chip away at the data that contains this beautiful, cohesive robotics taxonomy information I was hoping to obtain. Clearly, I need to better structure the data for analysis in order to achieve a taxonomy that might be used as a high-level robotics taxonomoy. I look forward to revisiting this later. For now, here are some pretty and lightly informative graphs:
+
 ### Top 25 High-Level ToC Words
 {{<figure src="../img/topwords_25_transparent.png" height="600" >}}
+
+This graph uses only the top-level ToC section titles. I have to say it's not extremely surprising-- all the terms point to basic robotic systems comprised of sensing, planning, and control. If I didn't use it nearly everyday, I might be surprised at the frequency with which [ROS](https://www.ros.org/) shows up as its own section in many robotics books.
 
 ## Potential Bias & Other Errors
 I did throw out entire books in two cases:
