@@ -23,3 +23,9 @@ In this post, I want to:
 # Shape Representation Using Point Clouds
 
 # A Bare Bones Implementation
+
+
+*References:*
+* https://github.com/Seanmatthews/separating-axis-theorem
+* http://www.dyn4j.org/2010/01/sat/
+* https://gamedevelopment.tutsplus.com/tutorials/collision-detection-using-the-separating-axis-theorem--gamedev-169
