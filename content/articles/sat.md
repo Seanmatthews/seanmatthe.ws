@@ -27,14 +27,12 @@ The Separating Axis Theorem (SAT) is an application of the [Hyperplane Separatio
 
 Following from HST, SAT simply exacts the application of this theorem on convex polygons, whose vertices are sets of points in n-dimensional cases. Here's what that looks like in 2D, courtesy of Wikipedia:
 
-{{< figure >}}
-
-# Shape Representation Using Point Clouds
-
+{{< figure rc="sat.png" >}}
 
 # A Bare Bones Implementation
+In robotics, [lidar](https://en.wikipedia.org/wiki/Lidar) is a very common sensor. You may have seen videos of some company's autonmous car mapping its environment with the use of a multi-scan lidar. In these and other contexts, lidar is often used for detecting objects in the environment by segmenting the various sets of scan points that have been placed in a common reference frame. 
 
-
+---
 *References:*
 * https://github.com/Seanmatthews/separating-axis-theorem
 * http://www.dyn4j.org/2010/01/sat/
