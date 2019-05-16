@@ -9,19 +9,11 @@ tags:
 - parallel-programming
 ---
 
-_This might be one of my most frustrating posts to date because I suffered the classic mistake of not backing up my code. So here's your perennial reminder to **ALWAYS BACKUP YOUR WORK**._
+The **Separating Axis Theorem (SAT)** is an application of the **[Hyperplane Separation Theorem](https://en.wikipedia.org/wiki/Hyperplane_separation_theorem)** for the purpose of determining whether two convex polygons overlap (i.e. collision detection). In my own plain English, the HST theorem states:
 
----
-
-In this post, I want to:
-
-* Explain the separating axis theorem to you
-* Demonstrate its use with lidar data through C++ code
-
-# What Is The Separating Axis Theorem?
-The Separating Axis Theorem (SAT) is an application of the [Hyperplane Separation Theorem](https://en.wikipedia.org/wiki/Hyperplane_separation_theorem) for the purpose of determining whether two convex polygons overlap (i.e. collision detection). In my own plain English, the HST theorem states:
-
-> **Given two disjoint, nonempty, convex sets of points, there exists a hyperplane that separates them.**
+> <span style="font-size:15px;">
+***Given two disjoint, nonempty, convex sets of points, there exists a hyperplane that separates them.***
+</span>
 
 > _(Note that the "points" may be any subset of n-dimensional reals.)_
 
@@ -43,11 +35,122 @@ Once our objects are segmented into sets of points, if were to stretch a rubber 
 
 
 # A Bare-Bones Implementation
+<br/>
+{{< highlight cpp >}}
+void SeparatingAxisTheorem::getProjectionAxes(const std::vector<EigenPt>& verts, 
+                                              std::vector<EigenPt>& axes)
+{
+    for (int i=0; i<verts.size(); ++i) 
+	{
+        int j = (i+1)%(verts.size());
+        auto pt1 = verts[i];
+        auto pt2 = verts[j];
+        EigenPt edgeNormal { pt2[1] - pt1[1], -(pt2[0] - pt1[0]) };
+        axes.push_back(edgeNormal);
+    }
+}
+{{< / highlight >}}
 
+<br/>
+{{< highlight cpp >}}
+void SeparatingAxisTheorem::projectOntoAxis(const std::vector<EigenPt>& hullPts, 
+                                            const EigenPt axis, 
+                                            std::vector<EigenPt>& projPts)
+{
+    for (auto p : hullPts)
+    {
+        EigenPt pp = (p.dot(axis) / axis.dot(axis)) * axis;
+        projPts.push_back(pp);
+    }
+}
+{{< / highlight >}}
 
+{{< highlight cpp >}}
+bool SeparatingAxisTheorem::pointsOverlap(std::vector<EigenPt>& ptsA, 
+                                          std::vector<EigenPt>& ptsB)
+{
+    // Find endpoints by sorting points
+    auto sortFunc = [](const EigenPt a, const EigenPt b) 
+		{ return a[0] == b[0] ? a[1] < b[1] : a[0] < b[0]; };
+    sort(ptsA.begin(), ptsA.end(), sortFunc);
+    sort(ptsB.begin(), ptsB.end(), sortFunc);
+    
+    // Determine overlap via: A--B, C--D, B >= C 0 && D >= A
+    return !sortFunc(ptsB[ptsB.size()-1], ptsA[0]) &&
+           !sortFunc(ptsA[ptsA.size()-1], ptsB[0]);
+}
+{{< / highlight >}}
+
+<br/>
+{{< highlight cpp >}}
+bool SeparatingAxisTheorem::projectionOverlap(const std::vector<EigenPt>& ptsA,
+                                              const std::vector<EigenPt>& ptsB,
+                                              const std::vector<EigenPt>& axes)
+{
+    std::vector<EigenPt> projA, projB;
+    
+    for (auto axis : axes)
+    {
+        // Project onto axis
+        projectOntoAxis(ptsA, axis, projA);
+        projectOntoAxis(ptsB, axis, projB);
+        
+        // If no overlap, return false
+        if (!pointsOverlap(projA, projB)) return false;
+        
+        projA.clear();
+        projB.clear();
+    }
+    return true;
+}
+{{< / highlight >}}
+
+<br/>
+{{< highlight cpp >}}
+bool SeparatingAxisTheorem::overlap(HullPtr a, HullPtr b) 
+{
+    int dimension = a->getDimension();
+    assert(b->getDimension() == dimension);
+    assert(2 == dimension); // Currently only support 2D
+    
+    std::vector<EigenPt> axesA, axesB;
+    std::vector<EigenPt> pointsA, pointsB;
+
+    // Reconstruct with PointXYZ point cloud, regardless of how the hull was formed
+    CloudPtr vertsA { new Cloud };
+    CloudPtr vertsB { new Cloud };
+    a->reconstruct(*vertsA);
+    b->reconstruct(*vertsB);
+
+    // if no vertices, cloud is empty
+    assert(vertsA->points.size() > 0 && vertsB->points.size() > 0);
+
+    // Get the points from cloud
+    std::for_each(vertsA->points.begin(), vertsA->points.end(), [&pointsA](pcl::PointXYZ p) {
+            pointsA.emplace_back(p.data);
+        });
+    std::for_each(vertsB->points.begin(), vertsB->points.end(), [&pointsB](pcl::PointXYZ p) {
+            pointsB.emplace_back(p.data);
+        });
+
+    // Find the axes onto which we'll project the hulls
+    getProjectionAxes(pointsA, axesA);
+    getProjectionAxes(pointsB, axesB);
+        
+    return (projectionOverlap(pointsA, pointsB, axesA) && 
+            projectionOverlap(pointsA, pointsB, axesB));
+}
+{{< / highlight >}}
+
+<br/>
+Finally, **main.cpp** creates random point clouds within a visualization for testing and displaying the results of our SAT implementation. Find the full code with installation & operation instructions [here](https://github.com/Seanmatthews/separating-axis-theorem).
+{{< gist Seanmatthews 2a7920ca1a58e84014d161a4f79b623d "main.cpp" >}}
+
+<br/><br/>
 
 ---
 *References:*
+
 * https://github.com/Seanmatthews/separating-axis-theorem
 * http://www.dyn4j.org/2010/01/sat/
 * https://gamedevelopment.tutsplus.com/tutorials/collision-detection-using-the-separating-axis-theorem--gamedev-169
