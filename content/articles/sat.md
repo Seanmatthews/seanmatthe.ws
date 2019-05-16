@@ -38,7 +38,9 @@ A fully-mapped indoor area
 {{< figure src="" >}}
 "I map myself with a lidar on a stick"
 
-Once our objects are segmented into sets of points, we can 
+Once our objects are segmented into sets of points, if were to stretch a rubber band around those points, it would form a convex polgon whose vertices are the outermost points in the set.
+
+Now, let's assume we're performing a correspondance step, whereby we associate a set of segmented scan points from a previous time step with the set of scan points in the current time step that might represent the same object. Upon successfully corresponding 
 
 # A Bare-Bones Implementation
 
