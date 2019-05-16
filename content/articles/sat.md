@@ -29,8 +29,18 @@ Following from HST, SAT simply exacts the application of this theorem on convex 
 
 {{< figure rc="sat.png" >}}
 
-# A Bare Bones Implementation
-In robotics, [lidar](https://en.wikipedia.org/wiki/Lidar) is a very common sensor. You may have seen videos of some company's autonmous car mapping its environment with the use of a multi-scan lidar. In these and other contexts, lidar is often used for detecting objects in the environment by segmenting the various sets of scan points that have been placed in a common reference frame. 
+# Using Lidar Scan Points
+In robotics, [lidar](https://en.wikipedia.org/wiki/Lidar) is a very common sensor. You may have seen videos of some company's autonmous car mapping its environment with the use of a multi-scan lidar. In these and other contexts, lidar is often used for detecting objects in the environment by segmenting ([a whole subject unto itself](https://velodynelidar.com/lidar/hdlpressroom/pdf/Articles/LIDAR-based%203D%20Object%20Perception.pdf), by the way) the various sets of scan points that have been placed in a common reference frame.
+
+{{< figure src="store-points.png" >}}
+A fully-mapped indoor area
+
+{{< figure src="" >}}
+"I map myself with a lidar on a stick"
+
+Once our objects are segmented into sets of points, we can 
+
+# A Bare-Bones Implementation
 
 ---
 *References:*
