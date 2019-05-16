@@ -4,74 +4,79 @@
 https://twitter.com/chriscoyier/status/578684681949859840?refsrc=email&s=11
 */
 
+figcaption {
+    text-align: center;
+    font-size: 12px;
+    font-style: italic;
+}
+
 body {
-	background-color: #e6efff;
-	font-family: monospace;
-	position:absolute;
+    background-color: #e6efff;
+    font-family: monospace;
+    position:absolute;
 }
 
 .links a {
-	color: gray;
-	text-decoration: none;
-	font-size: 24px; /*calc(14px + 0.75vw);*/
-	letter-spacing: 1px; /*0.1vw;*/
-	text-align: center;
-	padding: calc(10px + 1vw) calc(10px + 0.5vw);
+    color: gray;
+    text-decoration: none;
+    font-size: 24px; /*calc(14px + 0.75vw);*/
+    letter-spacing: 1px; /*0.1vw;*/
+    text-align: center;
+    padding: calc(10px + 1vw) calc(10px + 0.5vw);
 
 }
 
 .container-all {
-	width: 50%;
-	min-width: 750px;
-	max-width: 1200px;
-	display: table;
-	margin: 0 auto;
+    width: 50%;
+    min-width: 750px;
+    max-width: 1200px;
+    display: table;
+    margin: 0 auto;
 }
 
 .container-all .tagline {
     width: 100%;
     margin: auto;
-	font-weight: bold;
-	font-size: 28px;/*calc(18px + 1vw);*/
-	margin-bottom: 16px;
-	text-align: center;
+    font-weight: bold;
+    font-size: 28px;/*calc(18px + 1vw);*/
+    margin-bottom: 16px;
+    text-align: center;
 }
 
 .container-all .blurb {
     width: 60%;
     margin: auto;
-	font-size: 13px;/*calc(12px + 0.5vw);*/
-	text-align: left;
-	display: table;
+    font-size: 13px;/*calc(12px + 0.5vw);*/
+    text-align: left;
+    display: table;
 }
 
 .container-all .logo {
-	width: 70%;
-	/*display: inline-block;*/
-	margin-bottom: 48px;
-	margin-left: auto;
-	margin-right: auto;
+    width: 70%;
+    /*display: inline-block;*/
+    margin-bottom: 48px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .container-all .links {
-	width: 80%;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 36px;
-	text-align: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 36px;
+    text-align: center;
 }
 
 .container-all img {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 95%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 95%;
 }
 
 .bash {
-	padding-top: 5px;
-	padding-bottom: 5px;	
-	width: 85%;
-	margin: auto auto;
+    padding-top: 5px;
+    padding-bottom: 5px;	
+    width: 85%;
+    margin: auto auto;
 }
-							
