@@ -19,8 +19,18 @@ In this post, I want to:
 * Demonstrate its use through C++ code
 
 # What Is The Separating Axis Theorem?
+The Separating Axis Theorem (SAT) is an application of the [Hyperplane Separation Theorem](https://en.wikipedia.org/wiki/Hyperplane_separation_theorem) for the purpose of determining whether two convex polygons overlap (i.e. collision detection). In my own plain English, the HST theorem states:
+
+`Given two disjoint, nonempty, convex sets of points, there exists a hyperplane that separates them.`
+
+(The "points" may be any subset of n-dimensional reals.) 
+
+Following from HST, SAT simply exacts the application of this theorem on convex polygons, whose vertices are sets of points in n-dimensional cases. Here's what that looks like in 2D, courtesy of Wikipedia:
+
+{{< figure >}}
 
 # Shape Representation Using Point Clouds
+
 
 # A Bare Bones Implementation
 
