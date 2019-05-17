@@ -29,12 +29,13 @@ Rather than start with polygons, we'll start with lidar scan points. In robotics
 
 In these and other contexts, lidar is often used for detecting objects in the environment by segmenting ([a whole subject unto itself](https://velodynelidar.com/lidar/hdlpressroom/pdf/Articles/LIDAR-based%203D%20Object%20Perception.pdf), by the way) the various sets of scan points that have been placed in a common reference frame.
 
-{{< figure src="store-points.png" caption="A fully-mapped indoor area" >}}
+{{< figure src="../img/office-ptcloud.png" caption="A fully-mapped indoor area" >}}
 
 Once our objects are segmented into sets of points, if were to stretch a rubber band around those points, it would form a convex polgon whose vertices are the outermost points in the set. Now, say we want to translate our autonomous mobile vehicle along a path in the lidar-mapped scene. At discrete steps along that path, we can compare the known polygon formed by our vehicle to the polygons formed by all the segmented sets of points in the world. A little *deus ex lidar*...
 
 
 # A Bare-Bones Implementation
+
 <br/>
 {{< highlight cpp >}}
 void SeparatingAxisTheorem::getProjectionAxes(const std::vector<EigenPt>& verts, 
@@ -50,6 +51,7 @@ void SeparatingAxisTheorem::getProjectionAxes(const std::vector<EigenPt>& verts,
     }
 }
 {{< / highlight >}}
+This function simply finds all the normals of each edge described by the list of in-order vertices fed to it. It returns those normals as a set of axes. We'll project our polygons onto these axes when testing for collision.
 
 <br/>
 {{< highlight cpp >}}
@@ -64,7 +66,9 @@ void SeparatingAxisTheorem::projectOntoAxis(const std::vector<EigenPt>& hullPts,
     }
 }
 {{< / highlight >}}
+Another simple function, this one takes a list of points, which represent a convex polygon, and project them onto the supplied axis. It returns the projected points for that polygon.
 
+<br/>
 {{< highlight cpp >}}
 bool SeparatingAxisTheorem::pointsOverlap(std::vector<EigenPt>& ptsA, 
                                           std::vector<EigenPt>& ptsB)
@@ -80,6 +84,7 @@ bool SeparatingAxisTheorem::pointsOverlap(std::vector<EigenPt>& ptsA,
            !sortFunc(ptsA[ptsA.size()-1], ptsB[0]);
 }
 {{< / highlight >}}
+This function provides the meat of the overlap determination with a little added spice-- it takes two sets of convex polygon vertices and sorts them, first by X coordnate then by Y coordinate. Remember that all these vertices exist on a line, having been projected. The function orders the vertices such that the first in the list will be the furthest point in one direction along the line, and the last in the list will be the furthest point in the other direction. Then the return statement checks that no overlap exists between the first point of polygon A and the last point of polygon B, and vice versa (since the polygons could live on either wide of each other).
 
 <br/>
 {{< highlight cpp >}}
@@ -104,6 +109,7 @@ bool SeparatingAxisTheorem::projectionOverlap(const std::vector<EigenPt>& ptsA,
     return true;
 }
 {{< / highlight >}}
+This function collates the results of our previous functions, looping over all polygon normals (axes), projecting polygons onto those axes, and determining overlap. If one projection of the polygons onto one axis exists such that there's no overlap, then there exists a hyperplane that separates those two polygons. 
 
 <br/>
 {{< highlight cpp >}}
@@ -141,6 +147,7 @@ bool SeparatingAxisTheorem::overlap(HullPtr a, HullPtr b)
             projectionOverlap(pointsA, pointsB, axesB));
 }
 {{< / highlight >}}
+This function is the high-level interface for determining whether two convex polygons overlap. It checks that we're dealign with 2D polygons, transforms our randomly generated sample polygons into point clouds, forms a list of points from those clouds, creates a list of projection axes for each list of points, and determines if the two overlap.
 
 <br/>
 Finally, **main.cpp** creates random point clouds within a visualization for testing and displaying the results of our SAT implementation. Find the full code with installation & operation instructions [here](https://github.com/Seanmatthews/separating-axis-theorem).
